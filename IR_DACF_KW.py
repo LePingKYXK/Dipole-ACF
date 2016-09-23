@@ -106,7 +106,7 @@ def read_data(fname):
 def calc_derivative(data, delta_t):
     dy = np.zeros(np.shape(data))
     for i in xrange(3):
-        dy[:,i] = np.gradient(data[:,i])
+        dy[:,i] = np.gradient(data[:,i], edge_order=2)
     print "dy = ", dy
     dy = dy[~(np.absolute(dy) > 0.1).any(1),:]
     return np.divide(dy, delta_t)
@@ -252,8 +252,8 @@ if __name__ == '__main__':
     
     D_p = calc_derivative(dipole, delta_t)
     DACF = calc_ACF(D_p)
-    yfft = calc_FFT(DACF)
-    print "SHAPE OF YFFT = ", np.shape(yfft)
+    yfft = calc_FFT(DACF, window)
+    print "\n SHAPE OF YFFT = ", np.shape(yfft)
 
     wavenumber = np.fft.fftfreq(len(yfft), delta_t*c)[0:int(len(yfft)/2)]
     intensity = np.sum(yfft, axis=1)[0:int(len(yfft)/2)]
@@ -261,5 +261,5 @@ if __name__ == '__main__':
 #### Normalized the intensity
 #    intensity = intensity/max(intensity)
     save_results(fout, wavenumber, intensity)
-    print "Work Completed! Used Time = ", time.clock() - start
+    print "\n Work Completed! Used Time = ", time.clock() - start
     visualization(D_p, DACF, wavenumber, intensity)
