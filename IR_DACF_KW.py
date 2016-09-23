@@ -253,7 +253,7 @@ if __name__ == '__main__':
     D_p = calc_derivative(dipole, delta_t)
     DACF = calc_ACF(D_p)
     yfft = calc_FFT(DACF, window)
-    print "\n SHAPE OF YFFT = ", np.shape(yfft)
+    print "\n The Shape OF YFFT = ", np.shape(yfft)
 
     wavenumber = np.fft.fftfreq(len(yfft), delta_t*c)[0:int(len(yfft)/2)]
     intensity = np.sum(yfft, axis=1)[0:int(len(yfft)/2)]
