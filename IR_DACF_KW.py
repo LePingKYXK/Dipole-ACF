@@ -9,24 +9,24 @@ and "W" refers to Dr. Wang.
 
 The main improvement are:
 
-(1) Implementation of the powerful Numpy module, which facilitating the scientific
-calculation in data array.
-    By verticalizing all data lists to data array, the Numpy module dramatically 
-accelerated the calculations.
+(1) Implementation of the powerful Numpy module, which facilitating the fast
+calculation of the data array. The Numpy module accelerates the calculations 
+dramatically by converting all data lists into data array. 
+    Usually, the calculations would complete within 1 second.
 
-(2) Built a "zero_padding" function. This function dynamically add a series of zeros
-to the end of the Dipole moment array before FFT. The length of the zero-series is 
-the power-of-two (2^n).
+(2) Built a "zero_padding" function. This function dynamically add a series of 
+zeros to the end of the Dipole moment array before FFT. The length of the whole
+data series is the power-of-two (2^n).
     *[Note] FFT (Fast Fourier Transform) refers to a way the discrete Fourier 
     Transform (DFT) can be calculated efficiently, by using symmetries in the 
     calculated terms.The symmetry is highest when n is a power of 2, and the 
     transform is therefore most efficient for these sizes.
 
-(3) Using built-in fftconvolve function in scipy.signal module for fast calculating 
-the auto-correlation function.
+(3) Using built-in fftconvolve function in scipy.signal module for accelerating
+the auto-correlation function calculation.
 
-(4) Window Function was taken into consideration for suppressing noise. The window 
-function is imported from Scipy module. 
+(4) Window Function was taken into consideration for suppressing noise. The 
+window function is imported from scipy.signal module. 
 
 (5) Built a Visualization Function for plotting the results.
 
