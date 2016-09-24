@@ -87,8 +87,8 @@ fout = sys.argv[4]                   # The name of the output file
 c = 2.9979245899e10     # speed of light in vacuum in [cm/s], from Wikipedia.
 kB = 0.6950347          # Boltzman constant in [cm^-1/K], from Wikipedia.
 h_bar = 6.283185        # Reduced Planck constant in atomic unit, where h = 2*pi
-beta = 1.0/(kB * T)                         
-start = time.clock()	# The system clock, for checking the running speed. 
+#beta = 1.0/(kB * T)                         
+
 
 
 
@@ -129,7 +129,7 @@ def zero_padding(sample_data):
 
 
 def calc_ACF(array):
-'''
+    '''
     This function deals with the auto-correlation function (ACF) of the total
     dipole moment derivatives.
 
@@ -141,7 +141,7 @@ def calc_ACF(array):
 ####
 ####  for fast convolution 
 ####  http://sebug.net/paper/books/scipydoc/frequency_process.html#id5
-'''
+    '''
     # normalization
     yunbiased = array - np.mean(array, axis=0)
     ynorm = np.sum(np.power(yunbiased,2), axis=0)
@@ -247,6 +247,7 @@ def visualization(D_p, DACF, wavenumber, intensity):
 
 ######## The main program ########
 if __name__ == '__main__':
+    start = time.clock()	# The system clock, for checking the running speed. 
     dipole = read_data(fname)
     print "dipole \n", dipole, np.shape(dipole)
     
