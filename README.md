@@ -18,7 +18,7 @@ This script first read the **total dipole moment (Dipole in short)** data, which
 1. Implementation of the powerful Numpy module, which facilitating the fast calculation of the data array. The Numpy module accelerates the calculations dramatically by converting all data lists into data array. 
     Usually, the calculations would complete within 1 second.
 
-2. Built a "zero_padding" function. This function dynamically add a series of zeros to the end of the Dipole moment array before FFT. The length of the whole data series is the power-of-two (2^n).
+2. Built a "zero_padding" function. This function dynamically add a series of zeros to the end of the Dipole moment array before FFT. The length of the whole data series is the power-of-two (2<sup>n</sup>).
     + *[Note] FFT (Fast Fourier Transform) refers to a way the discrete Fourier Transform (DFT) can be calculated efficiently, by using symmetries in the calculated terms.The symmetry is highest when n is a power of 2, and the transform is therefore most efficient for these sizes.*
 
 3. Using built-in fftconvolve function in scipy.signal module for accelerating the auto-correlation function calculation.
