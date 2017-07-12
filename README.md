@@ -18,8 +18,8 @@ This script first read the **total dipole moment (Dipole in short)** data, which
 1. Implementation of the powerful Numpy module, which facilitating the fast calculation of the data array. The Numpy module accelerates the calculations dramatically by converting all data lists into data array. 
     Usually, the calculations would complete within 1 second.
 
-2. Built a "zero_padding" function. This function dynamically add a series of zeros to the end of the Dipole moment array before FFT. The length of the whole data series is the power-of-two (2^n).
-    + *[Note] FFT (Fast Fourier Transform) refers to a way the discrete Fourier Transform (DFT) can be calculated efficiently, by using symmetries in the calculated terms.The symmetry is highest when n is a power of 2, and the transform is therefore most efficient for these sizes.
+2. Built a "zero_padding" function. This function dynamically add a series of zeros to the end of the Dipole moment array before FFT. The length of the whole data series is the power-of-two (2<sup>n</sup>).
+    + *[Note] FFT (Fast Fourier Transform) refers to a way the discrete Fourier Transform (DFT) can be calculated efficiently, by using symmetries in the calculated terms.The symmetry is highest when n is a power of 2, and the transform is therefore most efficient for these sizes.*
 
 3. Using built-in fftconvolve function in scipy.signal module for accelerating the auto-correlation function calculation.
 
@@ -29,7 +29,7 @@ This script first read the **total dipole moment (Dipole in short)** data, which
 
 
 ## Contribution:
-Dr. Huan Wang         (The 3rd and 2nd version)
+Dr. Huan Wang         (The 3rd and 2nd version)  
 Dr. Waldemar Kulig    (The 1st version)
 
 ## E-mail address for contacting the authors:
@@ -38,23 +38,15 @@ Dr. Waldemar Kulig    (The 1st version)
 ## Copyright:
 The Hebrew University of Jerusalem, Givat Ram, Jerusalem, 91904, Israel.
 
+## PLEASE READ THE FOLLOWING INSTRUCTIONS BEFORE RUNNING SCRIPT
+###  The Format for Running This Script:
+`python` `IR_total_KW.py` *`INPUT_FILE`* *`DELTA_T`* *`WINDOW`* *`OUTPUT_FILE`*
 
-
-##### PLEASE READ THE FOLLOWING INSTRUCTIONs BEFORE RUNNING SCRIPT #####
-####                                                                ####
-####  The Format for Running This Script:                           ####
-####  python IR_total_KW.py INPUT_FILE DELTA_T WINDOW OUTPUT_FILE   ####
-####                                                                ####
-####  The values need to input manually when runing this script     ####
-####                                                                #### 
-####  (1) INPUT_FILE_NAME: The Total_Dipole_Moment_*.Diople file    ####
-####           (NOTE: do NOT need to re-split the Dipole file)      ####
-####                                                                #### 
-####  (2) DELTA_T: The Time_step set in simulation, in unit of fs   ####
-####                                                                ####
-####  (3) WINDOW: The Name of the Window Function                   ####
-####                                                                ####  
-####  (4) OUTPUT_FILE_NAME: The Name of the Output File.            ####
-####           (NOTE: do NOT need to type > sign!)                  ####
-####                                                                ####
+###  The values need to input manually when runing this script
+  1. *`INPUT_FILE`*: The Total_Dipole_Moment.Diople file
+      + <sub>*NOTE: do NOT need to re-split the Dipole file)*</sub>
+  2. *`DELTA_T`*: The Time_step set in simulation, in unit of fs
+  3. *`WINDOW`*: The Name of the Window Function
+  4. *`OUTPUT_FILE`*: The Name of the Output File
+      + <sub>*NOTE: do NOT need to type '>' sign!*</sub>
 #### ########################  Let's Try It! ###################### ####
