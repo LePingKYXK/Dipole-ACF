@@ -43,10 +43,10 @@ The Hebrew University of Jerusalem, Givat Ram, Jerusalem, 91904, Israel.
 `python` `IR_total_KW.py` *`INPUT_FILE`* *`DELTA_T`* *`WINDOW`* *`OUTPUT_FILE`*
 
 ###  The values need to input manually when runing this script
-  1. INPUT_FILE: The Total_Dipole_Moment.Diople file
-    + <sub>*NOTE: do NOT need to re-split the Dipole file)*</sub>
-  2. DELTA_T: The Time_step set in simulation, in unit of fs
-  3. WINDOW: The Name of the Window Function
-  4. OUTPUT_FILE_NAME: The Name of the Output File
-    + <sub>*NOTE: do NOT need to type '>' sign!*</sub>
+  1. *`INPUT_FILE`*: The Total_Dipole_Moment.Diople file
+      + <sub>*NOTE: do NOT need to re-split the Dipole file)*</sub>
+  2. *`DELTA_T`*: The Time_step set in simulation, in unit of fs
+  3. *`WINDOW`*: The Name of the Window Function
+  4. *`OUTPUT_FILE`*: The Name of the Output File
+      + <sub>*NOTE: do NOT need to type '>' sign!*</sub>
 #### ########################  Let's Try It! ###################### ####
