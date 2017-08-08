@@ -16,16 +16,16 @@ This script first read the **total dipole moment (Dipole in short)** data, which
 ## The main improvement are:
 
 1. Implementation of the powerful Numpy module, which facilitating the fast calculation of the data array. The Numpy module accelerates the calculations dramatically by converting all data lists into data array. 
-    Usually, the calculations would complete within 1 second.
+    Usually, the calculations would complete within 3 second.
 
-2. Built a "zero_padding" function. This function dynamically add a series of zeros to the end of the Dipole moment array before FFT. The length of the whole data series is the power-of-two (2<sup>n</sup>).
+2. Built a `zero_padding()` function. This function dynamically add a series of zeros to the end of the Dipole moment array before FFT. The length of the whole data series is the power-of-two (2<sup>n</sup>).
     + *[Note] FFT (Fast Fourier Transform) refers to a way the discrete Fourier Transform (DFT) can be calculated efficiently, by using symmetries in the calculated terms.The symmetry is highest when n is a power of 2, and the transform is therefore most efficient for these sizes.*
 
-3. Using built-in fftconvolve function in scipy.signal module for accelerating the auto-correlation function calculation.
+3. Using built-in `signal.fftconvolve()` function in scipy.signal module for accelerating the auto-correlation function calculation.
 
-4. A window Function was taken into consideration for suppressing noise. The window function is imported from scipy.signal module. 
+4. A `choose_window()` function was taken into consideration for suppressing noise. The window function is imported from scipy.signal module. 
 
-5. Built a Visualization Function for plotting the results.
+5. Built a `visualization()` function for plotting the results.
 
 
 ## Contribution:
